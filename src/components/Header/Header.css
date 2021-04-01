@@ -1,0 +1,77 @@
+/* Header */
+.landingpageHeader {
+    position: fixed;
+    top:0;
+    height: 80px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    background-color: white;
+  }
+  
+  .leftLandingpageHeader {
+    width: 50%;
+    display: flex;
+    background: rgb(255, 255, 255, 0.8);
+
+  }
+  .headerLogo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .headerLogo,
+  .headerHome,
+  .headerPosts,
+  .headerPostDetail,
+  .signupLink,
+  .headerLogin {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .rightLandingpageHeader {
+    width: 50%;
+    background: rgb(255, 255, 255, 0.6);
+  }
+  
+  .landingpageHeader h1 {
+    font-weight: 900;
+    font-size: 28px;
+    margin: 0 10px;
+    align-self: center;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .landingpageHeader nav {
+    justify-content: space-around;
+    display: flex;
+    width: 100%;
+    color:white;
+  }
+  
+  .landingpageHeader nav ul {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0;
+  }
+  .landingpageHeader nav ul li {
+    justify-content: space-around;
+    align-self: center;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .landingpageHeader nav ul li :hover {
+    color: white;
+    background: #4835c0;
+  }
+  .signup {
+    border: 0.15rem solid black;
+    padding: 5px;
+    border-radius: 4px;
+  }
