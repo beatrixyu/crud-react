@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import ProductList from '../components/ProductList/ProductList'
+import Product from '../components/ProductItem/Product'
 import CreateProduct from '../components/CreateProduct/CreateProject'
 import searchIcon from '../assets/searchIcon.png'
 import './container.css'
@@ -22,7 +23,7 @@ const Container =()=> {
          if ( ! products ) return [];
         if ( ! search ) return products;
          return products.filter( product =>
-                product.title.toLocaleLowerCase().startsWith(lowerCaseSearch)
+                product.title.toLocaleLowerCase().match(lowerCaseSearch) || product.category.toLocaleLowerCase().match(lowerCaseSearch)
               )
          }, [products, search])
          console.log(filteredProducts)
@@ -41,7 +42,17 @@ const Container =()=> {
         setProducts([{ ...product }, ...products]);
         console.log(...products);
       };
+      
+      const updateProduct = (e, updatedProduct) => {
+        e.preventDefault();
+        const newProductList = products.map((product) =>
+          product.id === updatedProduct.id ? updatedProduct : product
+        );
+        setProducts(newProductList);
+      };
 
+      const removeProduct = (id) =>
+      setProducts(products.filter((selectedProduct) => selectedProduct.id !== id));
 
     return (
     <div className="search">
@@ -62,8 +73,14 @@ const Container =()=> {
 
           <CreateProduct createProduct={createProduct}/>
         
-        <div className="productList">
-        <ProductList products={filteredProducts}></ProductList>
+        <div className="productList" style={{ display: 'flex', flexWrap:'wrap',  width: '100%', margin:"3%"}}>
+             { filteredProducts && filteredProducts.map(product => 
+             <Product 
+                 key={product.id} 
+                 {...product} 
+                 updateProduct={updateProduct}
+                 removeProduct={removeProduct}/>)} 
+        {/* <ProductList products={filteredProducts}  ></ProductList> */}
         </div>
         
 
