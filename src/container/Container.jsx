@@ -8,7 +8,7 @@ import './container.css'
 const Container =()=> {
     const [search, setSearch] = useState("");
     const [products, setProducts] = useState([]);
-    console.log(search)
+    // console.log(search)
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
@@ -32,7 +32,7 @@ const Container =()=> {
           return <p>"Loading..."</p>;
       }
  
-    if ( ! products ) return 'no products...'
+    if ( !products ) return 'no products...'
 
      const handleSearchSubmit = async (e) => {
          e.preventDefault();
@@ -44,21 +44,20 @@ const Container =()=> {
       };
       
       const updateProduct = (e, updatedProduct) => {
-        e.preventDefault();
-        const newProductList = products.map((product) =>
+         e.preventDefault();
+        setProducts(products.map(product =>
           product.id === updatedProduct.id ? updatedProduct : product
-        );
-        setProducts(newProductList);
+        ));
       };
 
       const removeProduct = (id) =>
-      setProducts(products.filter((selectedProduct) => selectedProduct.id !== id));
+      setProducts(products.filter(selectedProduct=> selectedProduct.id !== id));
 
     return (
     <div className="search">
         <div className="bg__image"></div>
         <form onSubmit={handleSearchSubmit}>
-            <label htmlFor="search-text"><h1>How can we help you?</h1></label>
+            <label htmlFor="search-text"><h1>Search Products Here!</h1></label>
           <br />
             <br/><br/>
             <div className="searchBarInput">
