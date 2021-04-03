@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Modal,Button, Card, Tabs, Form, Input, Text } from 'antd';
+import { Modal,Button, Card, Tabs, Form, Input } from 'antd';
 import { EditOutlined, DeleteOutlined, CheckCircleOutlined, BarChartOutlined } from '@ant-design/icons';
 import './Product.css'
 
@@ -103,42 +103,82 @@ function showDeleteConfirm() {
       title={title}
     /> */}
     <div style={{display:'flex'}} className="tabInputTitle">
-     <Input type="text" defaultValue={title}  name="title" onChange={handleChange} allowClear={true} suffix={<CheckCircleOutlined onClick={handleSubmit}/>} prefix={<EditOutlined/>} onPressEnter={handleSubmit} bordered={false} placeholder="press CheckCircle or EnterKey to save" style={{color:'black', fontSize:"16px"}}></Input>
-     {/* <Button onClick={handleSubmit}><CheckCircleOutlined/></Button>  */}
+      <Input 
+         type="text" 
+         defaultValue={title}  
+         name="title" 
+         onChange={handleChange} 
+         allowClear={true} 
+         suffix={<CheckCircleOutlined 
+         onClick={handleSubmit}/>} 
+         prefix={<EditOutlined/>} 
+         onPressEnter={handleSubmit} 
+         bordered={false} 
+         placeholder="press CheckCircle or EnterKey to save" 
+         style={{color:'black', fontSize:"16px"}}></Input>
      </div>
-      <Tabs defaultActiveKey="4" onChange={callback}>
-      <TabPane tab="Item Nr." key="1" className="tabInput">
-        # {id}
+      <Tabs 
+          defaultActiveKey="4" 
+          onChange={callback}>
+        <TabPane 
+            tab="Item Nr." 
+            key="1" 
+            className="tabInput">
+            # {id}
+        </TabPane>
+        <TabPane 
+            tab="Price" 
+            key="2" 
+            className="tabInput">
+          <Input 
+              type="number" 
+              defaultValue={price} 
+              name="price" 
+              prefix="€" 
+              suffix="EUR" 
+              onChange={handleChange} 
+              allowClear={true} 
+              onPressEnter={handleSubmit} 
+              prefix={<EditOutlined/>} 
+              placeholder="Press CheckCircle or EnterKey to save" style={{fontSize:"16px", width:"50%"}}/>
+           </TabPane >
+      <TabPane 
+          tab="category" 
+          key="3" 
+          className="tabInput">
+          <Input 
+              type="string" 
+              defaultValue={category} 
+              name="category" 
+              onChange={handleChange} 
+              bordered={false} 
+              style={{color:'black', width:"80%"}} 
+              allowClear={true} 
+              prefix={<EditOutlined/>} 
+              onPressEnter={handleSubmit} 
+              placeholder="Press CheckCircle or EnterKey to save">
+            </Input>
       </TabPane>
-      <TabPane tab="Price" key="2" className="tabInput">
-          <Input type="number" defaultValue={price} name="price" prefix="￥" suffix="EUR" onChange={handleChange} allowClear={true} onPressEnter={handleSubmit} prefix={<EditOutlined/>} placeholder="Press CheckCircle or EnterKey to save" style={{fontSize:"16px", width:"50%"}}/>
-          {/* <Button onClick={handleSubmit}><CheckCircleOutlined/></Button>  */}
-      </TabPane >
-      <TabPane tab="category" key="3" className="tabInput">
-      <Input type="string" defaultValue={category} name="category" onChange={handleChange} bordered={false} style={{color:'black', width:"80%"}} allowClear={true} prefix={<EditOutlined/>} onPressEnter={handleSubmit} placeholder="Press CheckCircle or EnterKey to save"></Input>
-      {/* <Button onClick={handleSubmit}><CheckCircleOutlined/></Button>  */}
-       </TabPane>
-       <TabPane tab="description" key="4" style={{ height: 50}} className="tabInput">
-      <TextArea type="string" defaultValue={description} name="description" onChange={handleChange} bordered={false} allowClear={true} prefix={<EditOutlined/>} onPressEnter={handleSubmit} style={{color:'black', width:"80%"}}placeholder="Press CheckCircle or EnterKey to save"  autoSize={{ minRows: 1, maxRows: 2 }}></TextArea>
-      {/* <Button onClick={handleSubmit}><CheckCircleOutlined/></Button>  */}
-       </TabPane>
+      <TabPane 
+          tab="description" 
+          key="4" 
+          style={{ height: 50}} 
+          className="tabInput">
+          <TextArea 
+              type="string" 
+              defaultValue={description} 
+              name="description" 
+              onChange={handleChange} 
+              bordered={false} 
+              allowClear={true} 
+              prefix={<EditOutlined/>} 
+              onPressEnter={handleSubmit} 
+              style={{color:'black', width:"80%"}}
+              placeholder="Press CheckCircle or EnterKey to save"  autoSize={{ minRows: 1, maxRows: 2 }}>
+          </TextArea>
+        </TabPane>
     </Tabs>
     <div >
-    {/* <Button onClick={showPromiseConfirm}><BarChartOutlined /></Button>
-    <Form>
-      <Form.Item lable="title">
-      <Input type="text" defaultValue={title} name="title" onChange={handleChange}></Input>
-      </Form.Item>
-      <Form.Item lable="price">
-      <Input type="number" defaultValue={price} name="price" onChange={handleChange}></Input>
-      </Form.Item>
-      <Form.Item lable="description">
-      <Input type="string" defaultValue={description} name="description" onChange={handleChange}></Input>
-      </Form.Item>
-      <Form.Item lable="category">
-      <Input type="string" defaultValue={category} name="category" onChange={handleChange}></Input>
-      </Form.Item>
-    </Form> */}
    </div>
   </Card>
 </div>

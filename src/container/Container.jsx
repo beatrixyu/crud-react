@@ -79,8 +79,6 @@ const Container =()=> {
                  updateProduct={updateProduct}
                  removeProduct={removeProduct}/>)} 
         </div>
-        
-
     </div>
   );
 }
