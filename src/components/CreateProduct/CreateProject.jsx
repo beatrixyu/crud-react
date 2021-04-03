@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { Modal, Button, Form, Input } from 'antd';
+import { PlusSquareOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
+import './CreateProject.css'
 
 const CreateProduct = (props) => {
 const [isModalVisible, setIsModalVisible] = useState(false);
@@ -34,10 +36,13 @@ const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
     <>
-    se);
-      <Button type="primary" onClick={showModal}>
-      👨🏻‍🏭 Would you like to add a product?
-      </Button>
+    <div className="createContainer" 
+    style={{fontSize:"30px", fontWeight:"bolder"}}
+    >
+    <div style={{color:"black", paddingTop:"2%", textShadow:'2px 2px white'}}>Would You Like to Add More Product?
+    </div>
+    <PlusSquareOutlined onClick={showModal} style={{color:"black",background:"none", margin:'2px', fontSize:"50px"}}/>
+    </div>
       <Modal 
       title="Create a product" 
       visible={isModalVisible} 
@@ -45,6 +50,7 @@ const [isModalVisible, setIsModalVisible] = useState(false);
       onCancel={handleCancel}
       >
       <Form>
+        <Form.Item rules={[{ required: true }]}>
           <Input
             size="sm"
             type="text"
@@ -52,10 +58,10 @@ const [isModalVisible, setIsModalVisible] = useState(false);
             placeholder="Title"
             value={newProduct.title}
             onChange={handleChange}
-            required
+            rules={[{ required: true }]}
           />
-          <br />
-          <br />
+        </Form.Item>        
+        <Form.Item rules={[{ required: true }]}>
           <Input
             size="sm"
             type="text"
@@ -63,10 +69,10 @@ const [isModalVisible, setIsModalVisible] = useState(false);
             placeholder="Description"
             value={newProduct.description}
             onChange={handleChange}
-            required
+            rules={[{ required: true }]}
           />
-          <br />
-          <br />
+        </Form.Item>  
+        <Form.Item rules={[{ required: true }]}>
           <Input
             size="sm"
             type="text"
@@ -74,10 +80,10 @@ const [isModalVisible, setIsModalVisible] = useState(false);
             placeholder="Category"
             value={newProduct.category}
             onChange={handleChange}
-            required
+            rules={[{ required: true }]}
           />
-          <br />
-          <br />
+        </Form.Item>  
+        <Form.Item rules={[{ required: true }]}>
           <Input
             size="sm"
             type="text"
@@ -85,10 +91,10 @@ const [isModalVisible, setIsModalVisible] = useState(false);
             placeholder="Price"
             value={newProduct.price}
             onChange={handleChange}
-            required
+            rules={[{ required: true }]}
           />
-          <br />
-          <br />
+        </Form.Item>  
+        <Form.Item rules={[{ required: true }]}>
           <Input
             size="sm"
             type="text"
@@ -96,11 +102,11 @@ const [isModalVisible, setIsModalVisible] = useState(false);
             placeholder="Image Link"
             value={newProduct.image}
             onChange={handleChange}
-            required
+            rules={[{ required: true }]}
           />
-        </Form>    
- 
-        </Modal> 
+        </Form.Item>  
+      </Form>    
+    </Modal> 
     </>
   );
 };

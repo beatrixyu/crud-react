@@ -1,0 +1,11 @@
+.tabInput Input{
+    color:black !important;
+    font-size: 15px !important;
+}
+
+.tabInputTitle Input{
+    color:black !important;
+    font-size: 15px !important;
+    width: 100% !important;
+}
+

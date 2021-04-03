@@ -3,6 +3,7 @@ import ProductList from '../components/ProductList/ProductList'
 import Product from '../components/ProductItem/Product'
 import CreateProduct from '../components/CreateProduct/CreateProject'
 import searchIcon from '../assets/searchIcon.png'
+import table from '../assets/table'
 import './container.css'
 
 const Container =()=> {
@@ -55,24 +56,24 @@ const Container =()=> {
 
     return (
     <div className="search">
-        <div className="bg__image"></div>
-        <form onSubmit={handleSearchSubmit}>
-            <label htmlFor="search-text"><h1>Search Products Here!</h1></label>
+        <div className="bgImage"></div>
+
+        <form onSubmit={handleSearchSubmit} className='searchForm'>
+            <label htmlFor="search-text"><h1></h1></label>
           <br />
             <br/><br/>
             <div className="searchBarInput">
                 <input type="text"
-                       placeholder=""
+                       placeholder="Search items by name or category"
                        id="search-text"
                        value={search}
                        onChange={e => setSearch(e.target.value)}/>
                 <img src={searchIcon} alt=""/>
              </div>
         </form> 
-
-          <CreateProduct createProduct={createProduct}/>
+        <CreateProduct createProduct={createProduct}/>
         
-        <div className="productList" style={{ display: 'flex', flexWrap:'wrap',  width: '100%', margin:"3%"}}>
+        <div className="productList">
              { filteredProducts && filteredProducts.map(product => 
              <Product 
                  key={product.id} 

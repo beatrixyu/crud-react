@@ -1,0 +1,7 @@
+.createContainer{
+    background-image: url('../../assets/table.png');
+    background-size: cover;
+    background-repeat:repeat-x;
+    background-position: 100%;
+    height: 25vh;
+}
