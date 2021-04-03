@@ -8,8 +8,7 @@
 .search {
     color: #3276FB;
     height: 28vh;
-  background: white;
-
+  background: rgb(255, 255, 255, 0.9);
 }
 
 .search h1 {

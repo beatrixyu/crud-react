@@ -37,11 +37,11 @@ const [isModalVisible, setIsModalVisible] = useState(false);
   return (
     <>
     <div className="createContainer" 
-    style={{fontSize:"30px", fontWeight:"bolder"}}
+    style={{fontSize:"25px", fontWeight:"bolder", display:"flex", alignItems:"center", justifyContent:"center"}}
     >
-    <div style={{color:"black", paddingTop:"2%", textShadow:'2px 2px white'}}>Would You Like to Add More Product?
+    <div style={{color:"black",textShadow:'3px 3px white'}}> More Product? Add here! <br/>
+    <PlusSquareOutlined onClick={showModal} style={{color:"black",background:"white", margin:'2px', fontSize:"60px"}}/>
     </div>
-    <PlusSquareOutlined onClick={showModal} style={{color:"black",background:"none", margin:'2px', fontSize:"50px"}}/>
     </div>
       <Modal 
       title="Create a product" 

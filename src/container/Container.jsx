@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import ProductList from '../components/ProductList/ProductList'
 import Product from '../components/ProductItem/Product'
 import CreateProduct from '../components/CreateProduct/CreateProject'
 import searchIcon from '../assets/searchIcon.png'
-import table from '../assets/table'
 import './container.css'
 
 const Container =()=> {
@@ -68,7 +66,7 @@ const Container =()=> {
                        id="search-text"
                        value={search}
                        onChange={e => setSearch(e.target.value)}/>
-                <img src={searchIcon} alt=""/>
+                {/* <img src={searchIcon} alt=""/> */}
              </div>
         </form> 
         <CreateProduct createProduct={createProduct}/>
@@ -80,7 +78,6 @@ const Container =()=> {
                  {...product} 
                  updateProduct={updateProduct}
                  removeProduct={removeProduct}/>)} 
-        {/* <ProductList products={filteredProducts}  ></ProductList> */}
         </div>
         
 

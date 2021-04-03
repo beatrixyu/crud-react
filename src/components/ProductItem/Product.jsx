@@ -28,7 +28,6 @@ const Product =(props)=>{
       const { name, value } = e.target;
       console.log(name, value)
       setUpdatedProduct({ ...updatedProduct, [name]: value });
-      // props.updateProduct(e, updatedProduct);
     };
 
     const handleUpate = (e) => {
@@ -65,34 +64,6 @@ function showConfirm() {
     },
     onCancel() {
       console.log('Cancel');
-    },
-  });
-}
-
-function showPromiseConfirm() {
-  confirm({
-    title: 'Do you want to update?',
-    icon: <EditOutlined />,
-    content: 
-    <Form>
-      <Input.Group lable="title">
-      <Input type="text" defaultValue={title} name="title" onChange={handleUpate}></Input>
-      <Input type="number" defaultValue={price} name="price" onChange={handleUpate}></Input>
-      <Input type="string" defaultValue={description} name="description" onChange={handleUpate}></Input>
-      <Input type="string" defaultValue={category} name="category" onChange={handleUpate}></Input>
-      </Input.Group>
-    </Form>
-    ,
-    onOk() {
-      console.log('ok')
-      // handleChange();
-      // alert("success!");     
-        //  return new Promise((resolve, reject) => {
-      //    setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
-      //  }).catch(() => console.log('Oops errors!'));
-    },
-    onCancel() {
-      console.log('cancel')
     },
   });
 }
@@ -140,15 +111,15 @@ function showDeleteConfirm() {
         # {id}
       </TabPane>
       <TabPane tab="Price" key="2" className="tabInput">
-          <Input type="number" defaultValue={price} name="price" prefix="￥" suffix="EUR" onChange={handleChange} allowClear={true} onPressEnter={handleSubmit} placeholder="Press CheckCircle or EnterKey to save" style={{fontSize:"16px", width:"50%"}}/>
+          <Input type="number" defaultValue={price} name="price" prefix="￥" suffix="EUR" onChange={handleChange} allowClear={true} onPressEnter={handleSubmit} prefix={<EditOutlined/>} placeholder="Press CheckCircle or EnterKey to save" style={{fontSize:"16px", width:"50%"}}/>
           {/* <Button onClick={handleSubmit}><CheckCircleOutlined/></Button>  */}
       </TabPane >
       <TabPane tab="category" key="3" className="tabInput">
-      <Input type="string" defaultValue={category} name="category" onChange={handleChange} bordered={false} style={{color:'black', width:"80%"}} allowClear={true} onPressEnter={handleSubmit} placeholder="Press CheckCircle or EnterKey to save"></Input>
+      <Input type="string" defaultValue={category} name="category" onChange={handleChange} bordered={false} style={{color:'black', width:"80%"}} allowClear={true} prefix={<EditOutlined/>} onPressEnter={handleSubmit} placeholder="Press CheckCircle or EnterKey to save"></Input>
       {/* <Button onClick={handleSubmit}><CheckCircleOutlined/></Button>  */}
        </TabPane>
        <TabPane tab="description" key="4" style={{ height: 50}} className="tabInput">
-      <TextArea type="string" defaultValue={description} name="description" onChange={handleChange} bordered={false} allowClear={true} onPressEnter={handleSubmit} style={{color:'black', width:"80%"}}placeholder="Press CheckCircle or EnterKey to save"  autoSize={{ minRows: 1, maxRows: 2 }}></TextArea>
+      <TextArea type="string" defaultValue={description} name="description" onChange={handleChange} bordered={false} allowClear={true} prefix={<EditOutlined/>} onPressEnter={handleSubmit} style={{color:'black', width:"80%"}}placeholder="Press CheckCircle or EnterKey to save"  autoSize={{ minRows: 1, maxRows: 2 }}></TextArea>
       {/* <Button onClick={handleSubmit}><CheckCircleOutlined/></Button>  */}
        </TabPane>
     </Tabs>
