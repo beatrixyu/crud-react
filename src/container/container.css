@@ -6,8 +6,8 @@
   height: 100vh;
 }
 .search {
-    color: #3276FB;
-    height: 28vh;
+  color: #3276FB;
+  height: 20vh;
   background: rgb(255, 255, 255, 0.9);
 }
 
@@ -29,9 +29,9 @@ background: rgb(255, 255, 255. 0.7);
 }
 
 .search input {
-  background: rgb(255, 255, 255,0.2);
-  color: #3276FB;
-  width: 300px;
+background: rgb(255, 255, 255,0.2);
+color: #3276FB;
+width: 300px;
 border-top: 0;
 border-left: 0;
 border-right: 0;
@@ -45,8 +45,9 @@ color: #3276FB;
 
 .productList{
   color: #3276FB;
-width: 100%;
+  width: 100%;
   margin: 0;
+  padding:0;
   background: #F8F4EF;
   display: flex;
   flex-wrap: wrap;
