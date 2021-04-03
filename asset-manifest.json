@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/crud-react/static/css/main.72d3e222.chunk.css",
+    "main.css": "/crud-react/static/css/main.7d5b8733.chunk.css",
     "main.js": "/crud-react/static/js/main.0ae3090b.chunk.js",
     "main.js.map": "/crud-react/static/js/main.0ae3090b.chunk.js.map",
     "runtime-main.js": "/crud-react/static/js/runtime-main.c7652e73.js",
@@ -12,7 +12,7 @@
     "static/js/3.c21bff5e.chunk.js.map": "/crud-react/static/js/3.c21bff5e.chunk.js.map",
     "index.html": "/crud-react/index.html",
     "static/css/2.a5497ee8.chunk.css.map": "/crud-react/static/css/2.a5497ee8.chunk.css.map",
-    "static/css/main.72d3e222.chunk.css.map": "/crud-react/static/css/main.72d3e222.chunk.css.map",
+    "static/css/main.7d5b8733.chunk.css.map": "/crud-react/static/css/main.7d5b8733.chunk.css.map",
     "static/js/2.9e9a6819.chunk.js.LICENSE.txt": "/crud-react/static/js/2.9e9a6819.chunk.js.LICENSE.txt",
     "static/media/CreateProject.css": "/crud-react/static/media/table.048c0dcd.png",
     "static/media/container.css": "/crud-react/static/media/wine.ed0fab31.jpg"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.c7652e73.js",
     "static/css/2.a5497ee8.chunk.css",
     "static/js/2.9e9a6819.chunk.js",
-    "static/css/main.72d3e222.chunk.css",
+    "static/css/main.7d5b8733.chunk.css",
     "static/js/main.0ae3090b.chunk.js"
   ]
 }
